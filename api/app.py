@@ -73,7 +73,7 @@ def predict():
         
         data = np.array([temp_array])
 
-        linear_regressor = pickle.load(open('api\\Weights\\first-innings-score-lr-model-ann.pkl', 'rb'))
+        linear_regressor = pickle.load(open('api//first-innings-score-lr-model-linear.pkl', 'rb'))
         my_prediction_linear = int(linear_regressor.predict(data)[0])
         my_prediction_ridge = 0 #int(ridge_regressor.predict(data)[0])
         my_prediction_ann = 0 #int(ann.predict(data)[0])
@@ -188,3 +188,10 @@ def predict():
 # #     port = int(os.environ.get("PORT", 5000))
 # #     app.run(host='0.0.0.0', port=port, debug=True)
 # '''
+
+if __name__ == "__main__":
+    import os
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=8080)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
