@@ -75,7 +75,7 @@ def predict():
 
         # linear_regressor = pickle.load(open('api//first-innings-score-lr-model-linear.pkl', 'rb'))
         linear_regressor =""
-        with open('api//Weights//first-innings-score-lr-model-linear.pkl', 'rb') as f:
+        with open(r'./Weights/first-innings-score-lr-model-linear.pkl', 'rb') as f:
             linear_regressor = pickle.load(f)
 
         my_prediction_linear = int(linear_regressor.predict(data)[0])
@@ -193,9 +193,9 @@ def predict():
 # #     app.run(host='0.0.0.0', port=port, debug=True)
 # '''
 
-# if __name__ == "__main__":
-#     import os
-#     # from waitress import serve
-#     # serve(app, host="0.0.0.0", port=8080)
-#     port = int(os.environ.get("PORT", 5000))
-#     app.run(host='0.0.0.0', port=port, debug=True)
+if __name__ == "__main__":
+    import os
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=8080)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port, debug=True)
