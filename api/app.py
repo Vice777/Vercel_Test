@@ -75,7 +75,7 @@ def predict():
 
         # linear_regressor = pickle.load(open('api//first-innings-score-lr-model-linear.pkl', 'rb'))
         linear_regressor =""
-        with open(r'./Weights/first-innings-score-lr-model-linear.pkl', 'rb') as f:
+        with open(r'api/Weights/first-innings-score-lr-model-linear.pkl', 'rb') as f:
             linear_regressor = pickle.load(f)
 
         my_prediction_linear = int(linear_regressor.predict(data)[0])
